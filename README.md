@@ -7,11 +7,11 @@ Team **On Fire** · NASA Space Apps Cairo 2026
 
 | | |
 |---|---|
-| ▶️ **Demo video (29 s)** | https://www.youtube.com/watch?v=A0rXvPdA3MI |
+| ▶️ **Demo video (29 s)** | https://www.youtube.com/watch?v=iv5ABSGmRbU |
 | 💻 **Run it** | Windows: install Node.js + Python, download this repository, double-click **`setup.bat`** ([details](#run-it)) |
 | 📦 **Data download** | [Release `data-v1`](https://github.com/Abdelrahman-ahmed-cs/on-fire/releases/tag/data-v1) (fetched by `setup.bat` automatically) |
 
-[![On Fire demo video](https://i.ytimg.com/vi/A0rXvPdA3MI/maxresdefault.jpg)](https://www.youtube.com/watch?v=A0rXvPdA3MI)
+[![On Fire demo video](https://i.ytimg.com/vi/iv5ABSGmRbU/maxresdefault.jpg)](https://www.youtube.com/watch?v=iv5ABSGmRbU)
 
 ---
 
