@@ -1,0 +1,682 @@
+{
+  "headline": {
+    "text": "Harmonization cut MODIS-VIIRS disagreement from 144.1% to 30.3% on held-out years",
+    "before_pct": 144.1,
+    "after_pct": 30.3
+  },
+  "definition": "Symmetric mean absolute % difference between the MODIS-derived and VIIRS country-month totals, vegetation fires only, on years never used for fitting.",
+  "variant_selection": "chosen on inner-validation years [2013, 2016, 2019, 2022] within the fit years; held-out years were not used for any choice",
+  "held_out_years": [
+    2014,
+    2017,
+    2020,
+    2023
+  ],
+  "fit_years": [
+    2012,
+    2013,
+    2015,
+    2016,
+    2018,
+    2019,
+    2021,
+    2022,
+    2024,
+    2025
+  ],
+  "countries": [
+    "Algeria",
+    "Bahrain",
+    "Canada",
+    "Cyprus",
+    "Egypt",
+    "Iran",
+    "Iraq",
+    "Jordan",
+    "Kuwait",
+    "Lebanon",
+    "Libya",
+    "Mauritania",
+    "Mexico",
+    "Morocco",
+    "Oman",
+    "Palestine",
+    "Qatar",
+    "Saudi Arabia",
+    "Sudan",
+    "Syria",
+    "Tunisia",
+    "Turkey",
+    "United Arab Emirates",
+    "United States",
+    "Yemen"
+  ],
+  "chosen_variant": "cell-days 0.1 deg + power law + small-fire background",
+  "fine_grid_deg": 0.1,
+  "ablation": [
+    {
+      "variant": "raw detection counts (no harmonization)",
+      "disagreement_pct": 144.1,
+      "bias_pct": -78.1,
+      "median_ratio": 0.168,
+      "log_corr": 0.954,
+      "country_months": 1198
+    },
+    {
+      "variant": "raw detections x one global factor",
+      "disagreement_pct": 68.6,
+      "bias_pct": -7.4,
+      "median_ratio": 0.71,
+      "log_corr": 0.942,
+      "country_months": 1198
+    },
+    {
+      "variant": "cell-days 0.05 deg, uncalibrated",
+      "disagreement_pct": 132.6,
+      "bias_pct": -61.7,
+      "median_ratio": 0.213,
+      "log_corr": 0.952,
+      "country_months": 1198
+    },
+    {
+      "variant": "cell-days 0.05 deg + country-season factor",
+      "disagreement_pct": 47.2,
+      "bias_pct": -1.1,
+      "median_ratio": 0.927,
+      "log_corr": 0.941,
+      "country_months": 1198,
+      "inner_validation_disagreement_pct": 51.6
+    },
+    {
+      "variant": "cell-days 0.05 deg + country-season factor + per-cell refinement",
+      "disagreement_pct": 47.8,
+      "bias_pct": -4.7,
+      "median_ratio": 0.889,
+      "log_corr": 0.941,
+      "country_months": 1198,
+      "inner_validation_disagreement_pct": 52.5
+    },
+    {
+      "variant": "cell-days 0.05 deg + power law + small-fire background",
+      "disagreement_pct": 30.8,
+      "bias_pct": -3.8,
+      "median_ratio": 0.996,
+      "log_corr": 0.976,
+      "country_months": 1200,
+      "inner_validation_disagreement_pct": 32.8
+    },
+    {
+      "variant": "cell-days 0.1 deg, uncalibrated",
+      "disagreement_pct": 133.1,
+      "bias_pct": -62.3,
+      "median_ratio": 0.212,
+      "log_corr": 0.953,
+      "country_months": 1198
+    },
+    {
+      "variant": "cell-days 0.1 deg + country-season factor",
+      "disagreement_pct": 46.9,
+      "bias_pct": -0.9,
+      "median_ratio": 0.921,
+      "log_corr": 0.941,
+      "country_months": 1198,
+      "inner_validation_disagreement_pct": 51.0
+    },
+    {
+      "variant": "cell-days 0.1 deg + country-season factor + per-cell refinement",
+      "disagreement_pct": 47.7,
+      "bias_pct": -5.2,
+      "median_ratio": 0.884,
+      "log_corr": 0.942,
+      "country_months": 1198,
+      "inner_validation_disagreement_pct": 52.0
+    },
+    {
+      "variant": "cell-days 0.1 deg + power law + small-fire background",
+      "disagreement_pct": 30.3,
+      "bias_pct": -3.7,
+      "median_ratio": 0.992,
+      "log_corr": 0.977,
+      "country_months": 1200,
+      "inner_validation_disagreement_pct": 32.0
+    }
+  ],
+  "per_country": {
+    "Algeria": {
+      "before": {
+        "disagreement_pct": 148.2,
+        "bias_pct": -79.4,
+        "median_ratio": 0.132,
+        "log_corr": 0.876,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 18.0,
+        "bias_pct": -7.2,
+        "median_ratio": 0.917,
+        "log_corr": 0.883,
+        "country_months": 48
+      }
+    },
+    "Bahrain": {
+      "before": {
+        "disagreement_pct": 195.6,
+        "bias_pct": -98.6,
+        "median_ratio": 0.039,
+        "log_corr": 0.532,
+        "country_months": 47
+      },
+      "after": {
+        "disagreement_pct": 69.2,
+        "bias_pct": -20.8,
+        "median_ratio": 0.922,
+        "log_corr": -0.205,
+        "country_months": 48
+      }
+    },
+    "Canada": {
+      "before": {
+        "disagreement_pct": 126.1,
+        "bias_pct": -83.0,
+        "median_ratio": 0.213,
+        "log_corr": 0.983,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 21.1,
+        "bias_pct": -9.8,
+        "median_ratio": 1.006,
+        "log_corr": 0.981,
+        "country_months": 48
+      }
+    },
+    "Cyprus": {
+      "before": {
+        "disagreement_pct": 123.0,
+        "bias_pct": -77.5,
+        "median_ratio": 0.333,
+        "log_corr": 0.406,
+        "country_months": 47
+      },
+      "after": {
+        "disagreement_pct": 55.7,
+        "bias_pct": -6.4,
+        "median_ratio": 1.057,
+        "log_corr": 0.481,
+        "country_months": 48
+      }
+    },
+    "Egypt": {
+      "before": {
+        "disagreement_pct": 168.7,
+        "bias_pct": -91.0,
+        "median_ratio": 0.08,
+        "log_corr": 0.842,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 17.2,
+        "bias_pct": -13.1,
+        "median_ratio": 0.891,
+        "log_corr": 0.924,
+        "country_months": 48
+      }
+    },
+    "Iran": {
+      "before": {
+        "disagreement_pct": 130.0,
+        "bias_pct": -79.2,
+        "median_ratio": 0.204,
+        "log_corr": 0.871,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 17.7,
+        "bias_pct": -6.7,
+        "median_ratio": 0.92,
+        "log_corr": 0.919,
+        "country_months": 48
+      }
+    },
+    "Iraq": {
+      "before": {
+        "disagreement_pct": 137.8,
+        "bias_pct": -80.8,
+        "median_ratio": 0.187,
+        "log_corr": 0.885,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 16.8,
+        "bias_pct": -7.2,
+        "median_ratio": 0.944,
+        "log_corr": 0.953,
+        "country_months": 48
+      }
+    },
+    "Jordan": {
+      "before": {
+        "disagreement_pct": 155.4,
+        "bias_pct": -89.4,
+        "median_ratio": 0.093,
+        "log_corr": 0.095,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 35.3,
+        "bias_pct": -4.5,
+        "median_ratio": 1.061,
+        "log_corr": 0.69,
+        "country_months": 48
+      }
+    },
+    "Kuwait": {
+      "before": {
+        "disagreement_pct": 124.8,
+        "bias_pct": -79.1,
+        "median_ratio": 0.24,
+        "log_corr": 0.444,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 35.9,
+        "bias_pct": -5.1,
+        "median_ratio": 1.125,
+        "log_corr": 0.481,
+        "country_months": 48
+      }
+    },
+    "Lebanon": {
+      "before": {
+        "disagreement_pct": 170.6,
+        "bias_pct": -85.8,
+        "median_ratio": 0.105,
+        "log_corr": 0.804,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 41.2,
+        "bias_pct": 11.3,
+        "median_ratio": 1.12,
+        "log_corr": 0.774,
+        "country_months": 48
+      }
+    },
+    "Libya": {
+      "before": {
+        "disagreement_pct": 171.6,
+        "bias_pct": -93.1,
+        "median_ratio": 0.066,
+        "log_corr": 0.675,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 44.9,
+        "bias_pct": -21.2,
+        "median_ratio": 0.887,
+        "log_corr": 0.411,
+        "country_months": 48
+      }
+    },
+    "Mauritania": {
+      "before": {
+        "disagreement_pct": 133.7,
+        "bias_pct": -77.2,
+        "median_ratio": 0.205,
+        "log_corr": 0.931,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 31.9,
+        "bias_pct": -5.0,
+        "median_ratio": 0.979,
+        "log_corr": 0.865,
+        "country_months": 48
+      }
+    },
+    "Mexico": {
+      "before": {
+        "disagreement_pct": 115.5,
+        "bias_pct": -74.2,
+        "median_ratio": 0.267,
+        "log_corr": 0.993,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 16.5,
+        "bias_pct": -2.8,
+        "median_ratio": 1.026,
+        "log_corr": 0.978,
+        "country_months": 48
+      }
+    },
+    "Morocco": {
+      "before": {
+        "disagreement_pct": 145.9,
+        "bias_pct": -81.6,
+        "median_ratio": 0.155,
+        "log_corr": 0.864,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 23.8,
+        "bias_pct": 0.8,
+        "median_ratio": 1.06,
+        "log_corr": 0.642,
+        "country_months": 48
+      }
+    },
+    "Oman": {
+      "before": {
+        "disagreement_pct": 151.0,
+        "bias_pct": -87.2,
+        "median_ratio": 0.128,
+        "log_corr": 0.42,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 22.2,
+        "bias_pct": -5.2,
+        "median_ratio": 0.985,
+        "log_corr": 0.74,
+        "country_months": 48
+      }
+    },
+    "Palestine": {
+      "before": {
+        "disagreement_pct": 148.0,
+        "bias_pct": -84.6,
+        "median_ratio": 0.146,
+        "log_corr": 0.808,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 35.4,
+        "bias_pct": 3.3,
+        "median_ratio": 1.028,
+        "log_corr": 0.699,
+        "country_months": 48
+      }
+    },
+    "Qatar": {
+      "before": {
+        "disagreement_pct": 141.4,
+        "bias_pct": -85.9,
+        "median_ratio": 0.125,
+        "log_corr": -0.008,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 54.0,
+        "bias_pct": -14.9,
+        "median_ratio": 0.976,
+        "log_corr": 0.044,
+        "country_months": 48
+      }
+    },
+    "Saudi Arabia": {
+      "before": {
+        "disagreement_pct": 159.6,
+        "bias_pct": -88.7,
+        "median_ratio": 0.109,
+        "log_corr": 0.638,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 12.7,
+        "bias_pct": -7.3,
+        "median_ratio": 0.969,
+        "log_corr": 0.58,
+        "country_months": 48
+      }
+    },
+    "Sudan": {
+      "before": {
+        "disagreement_pct": 136.6,
+        "bias_pct": -75.6,
+        "median_ratio": 0.209,
+        "log_corr": 0.997,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 31.5,
+        "bias_pct": -1.8,
+        "median_ratio": 0.998,
+        "log_corr": 0.952,
+        "country_months": 48
+      }
+    },
+    "Syria": {
+      "before": {
+        "disagreement_pct": 143.7,
+        "bias_pct": -80.0,
+        "median_ratio": 0.17,
+        "log_corr": 0.926,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 26.0,
+        "bias_pct": -4.3,
+        "median_ratio": 1.026,
+        "log_corr": 0.926,
+        "country_months": 48
+      }
+    },
+    "Tunisia": {
+      "before": {
+        "disagreement_pct": 161.5,
+        "bias_pct": -78.7,
+        "median_ratio": 0.086,
+        "log_corr": 0.89,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 31.3,
+        "bias_pct": 1.2,
+        "median_ratio": 1.101,
+        "log_corr": 0.851,
+        "country_months": 48
+      }
+    },
+    "Turkey": {
+      "before": {
+        "disagreement_pct": 102.4,
+        "bias_pct": -69.3,
+        "median_ratio": 0.296,
+        "log_corr": 0.936,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 27.2,
+        "bias_pct": -2.0,
+        "median_ratio": 1.029,
+        "log_corr": 0.916,
+        "country_months": 48
+      }
+    },
+    "United Arab Emirates": {
+      "before": {
+        "disagreement_pct": 135.8,
+        "bias_pct": -81.1,
+        "median_ratio": 0.166,
+        "log_corr": 0.447,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 26.8,
+        "bias_pct": 4.7,
+        "median_ratio": 1.085,
+        "log_corr": 0.631,
+        "country_months": 48
+      }
+    },
+    "United States": {
+      "before": {
+        "disagreement_pct": 108.0,
+        "bias_pct": -72.3,
+        "median_ratio": 0.298,
+        "log_corr": 0.956,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 6.8,
+        "bias_pct": -0.8,
+        "median_ratio": 1.0,
+        "log_corr": 0.955,
+        "country_months": 48
+      }
+    },
+    "Yemen": {
+      "before": {
+        "disagreement_pct": 167.6,
+        "bias_pct": -92.9,
+        "median_ratio": 0.067,
+        "log_corr": 0.132,
+        "country_months": 48
+      },
+      "after": {
+        "disagreement_pct": 38.3,
+        "bias_pct": -16.6,
+        "median_ratio": 0.785,
+        "log_corr": 0.543,
+        "country_months": 48
+      }
+    }
+  },
+  "uncertainty_band_p10_p90": [
+    0.575,
+    1.513
+  ],
+  "sensor_switch_check": {
+    "note": "change in mean yearly total from 2009-2011 to 2012-2014. MODIS alone is a consistent sensor, so a good harmonized series should show the same change.",
+    "by_country": {
+      "Algeria": {
+        "modis_only_reference": 1.44,
+        "harmonized": 1.05,
+        "naive_sensor_switch": 6.61
+      },
+      "Bahrain": {
+        "modis_only_reference": 0.14,
+        "harmonized": 0.95,
+        "naive_sensor_switch": 32.16
+      },
+      "Canada": {
+        "modis_only_reference": 1.35,
+        "harmonized": 1.33,
+        "naive_sensor_switch": 9.06
+      },
+      "Cyprus": {
+        "modis_only_reference": 1.15,
+        "harmonized": 1.3,
+        "naive_sensor_switch": 6.05
+      },
+      "Egypt": {
+        "modis_only_reference": 1.01,
+        "harmonized": 0.94,
+        "naive_sensor_switch": 9.02
+      },
+      "Iran": {
+        "modis_only_reference": 0.73,
+        "harmonized": 0.74,
+        "naive_sensor_switch": 3.15
+      },
+      "Iraq": {
+        "modis_only_reference": 1.11,
+        "harmonized": 0.83,
+        "naive_sensor_switch": 5.83
+      },
+      "Jordan": {
+        "modis_only_reference": 0.87,
+        "harmonized": 0.88,
+        "naive_sensor_switch": 10.11
+      },
+      "Kuwait": {
+        "modis_only_reference": 1.03,
+        "harmonized": 0.63,
+        "naive_sensor_switch": 3.3
+      },
+      "Lebanon": {
+        "modis_only_reference": 0.84,
+        "harmonized": 0.92,
+        "naive_sensor_switch": 5.69
+      },
+      "Libya": {
+        "modis_only_reference": 0.84,
+        "harmonized": 0.64,
+        "naive_sensor_switch": 7.42
+      },
+      "Mauritania": {
+        "modis_only_reference": 0.57,
+        "harmonized": 0.68,
+        "naive_sensor_switch": 2.71
+      },
+      "Mexico": {
+        "modis_only_reference": 0.81,
+        "harmonized": 0.85,
+        "naive_sensor_switch": 3.03
+      },
+      "Morocco": {
+        "modis_only_reference": 0.9,
+        "harmonized": 0.96,
+        "naive_sensor_switch": 5.64
+      },
+      "Oman": {
+        "modis_only_reference": 1.24,
+        "harmonized": 0.92,
+        "naive_sensor_switch": 9.03
+      },
+      "Palestine": {
+        "modis_only_reference": 0.76,
+        "harmonized": 0.88,
+        "naive_sensor_switch": 4.35
+      },
+      "Qatar": {
+        "modis_only_reference": 1.01,
+        "harmonized": 0.74,
+        "naive_sensor_switch": 4.5
+      },
+      "Saudi Arabia": {
+        "modis_only_reference": 0.88,
+        "harmonized": 0.79,
+        "naive_sensor_switch": 6.38
+      },
+      "Sudan": {
+        "modis_only_reference": 1.07,
+        "harmonized": 0.96,
+        "naive_sensor_switch": 4.31
+      },
+      "Syria": {
+        "modis_only_reference": 1.26,
+        "harmonized": 1.17,
+        "naive_sensor_switch": 7.33
+      },
+      "Tunisia": {
+        "modis_only_reference": 1.61,
+        "harmonized": 1.32,
+        "naive_sensor_switch": 9.99
+      },
+      "Turkey": {
+        "modis_only_reference": 0.5,
+        "harmonized": 0.6,
+        "naive_sensor_switch": 1.52
+      },
+      "United Arab Emirates": {
+        "modis_only_reference": 1.45,
+        "harmonized": 1.2,
+        "naive_sensor_switch": 8.83
+      },
+      "United States": {
+        "modis_only_reference": 0.93,
+        "harmonized": 0.89,
+        "naive_sensor_switch": 3.23
+      },
+      "Yemen": {
+        "modis_only_reference": 0.85,
+        "harmonized": 0.93,
+        "naive_sensor_switch": 7.45
+      }
+    },
+    "mean_factor_error_harmonized": 1.25,
+    "mean_factor_error_naive_switch": 6.5
+  }
+}

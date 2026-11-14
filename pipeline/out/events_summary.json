@@ -1,0 +1,152 @@
+{
+ "Algeria": {
+  "events": 35976,
+  "high_min_detections": 6,
+  "critical_min_detections": 53,
+  "largest_detections": 9111
+ },
+ "Bahrain": {
+  "events": 462,
+  "high_min_detections": 6,
+  "critical_min_detections": 44,
+  "largest_detections": 92
+ },
+ "Canada": {
+  "events": 133339,
+  "high_min_detections": 15,
+  "critical_min_detections": 665,
+  "largest_detections": 84631
+ },
+ "Cyprus": {
+  "events": 956,
+  "high_min_detections": 4,
+  "critical_min_detections": 50,
+  "largest_detections": 172
+ },
+ "Egypt": {
+  "events": 32714,
+  "high_min_detections": 4,
+  "critical_min_detections": 20,
+  "largest_detections": 3772
+ },
+ "Iran": {
+  "events": 92799,
+  "high_min_detections": 4,
+  "critical_min_detections": 26,
+  "largest_detections": 2656
+ },
+ "Iraq": {
+  "events": 54695,
+  "high_min_detections": 6,
+  "critical_min_detections": 40,
+  "largest_detections": 8804
+ },
+ "Jordan": {
+  "events": 2373,
+  "high_min_detections": 3,
+  "critical_min_detections": 7,
+  "largest_detections": 25
+ },
+ "Kuwait": {
+  "events": 3169,
+  "high_min_detections": 7,
+  "critical_min_detections": 30,
+  "largest_detections": 623
+ },
+ "Lebanon": {
+  "events": 3355,
+  "high_min_detections": 4,
+  "critical_min_detections": 14,
+  "largest_detections": 310
+ },
+ "Libya": {
+  "events": 10275,
+  "high_min_detections": 5,
+  "critical_min_detections": 29,
+  "largest_detections": 699
+ },
+ "Mauritania": {
+  "events": 4403,
+  "high_min_detections": 11,
+  "critical_min_detections": 94,
+  "largest_detections": 752
+ },
+ "Mexico": {
+  "events": 466765,
+  "high_min_detections": 6,
+  "critical_min_detections": 51,
+  "largest_detections": 58784
+ },
+ "Morocco": {
+  "events": 11118,
+  "high_min_detections": 3,
+  "critical_min_detections": 10,
+  "largest_detections": 518
+ },
+ "Oman": {
+  "events": 7051,
+  "high_min_detections": 10,
+  "critical_min_detections": 54,
+  "largest_detections": 745
+ },
+ "Palestine": {
+  "events": 6665,
+  "high_min_detections": 4,
+  "critical_min_detections": 16,
+  "largest_detections": 215
+ },
+ "Qatar": {
+  "events": 682,
+  "high_min_detections": 5,
+  "critical_min_detections": 23,
+  "largest_detections": 62
+ },
+ "Saudi Arabia": {
+  "events": 28912,
+  "high_min_detections": 7,
+  "critical_min_detections": 40,
+  "largest_detections": 945
+ },
+ "Sudan": {
+  "events": 203387,
+  "high_min_detections": 11,
+  "critical_min_detections": 70,
+  "largest_detections": 43171
+ },
+ "Syria": {
+  "events": 20738,
+  "high_min_detections": 6,
+  "critical_min_detections": 54,
+  "largest_detections": 4314
+ },
+ "Tunisia": {
+  "events": 7039,
+  "high_min_detections": 4,
+  "critical_min_detections": 31,
+  "largest_detections": 444
+ },
+ "Turkey": {
+  "events": 94165,
+  "high_min_detections": 5,
+  "critical_min_detections": 32,
+  "largest_detections": 4072
+ },
+ "United Arab Emirates": {
+  "events": 3210,
+  "high_min_detections": 4,
+  "critical_min_detections": 19,
+  "largest_detections": 118
+ },
+ "United States": {
+  "events": 927488,
+  "high_min_detections": 6,
+  "critical_min_detections": 36,
+  "largest_detections": 62111
+ },
+ "Yemen": {
+  "events": 3452,
+  "high_min_detections": 3,
+  "critical_min_detections": 13,
+  "largest_detections": 248
+ }
+}

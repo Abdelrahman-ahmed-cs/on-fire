@@ -1,0 +1,149 @@
+{
+ "question": "Will this 0.25 degree cell have at least one non-flare VIIRS fire detection in the week, predicted from data available before the week starts?",
+ "split": {
+  "train": "2012-03 to 2018",
+  "tune": "2019-2020 (early stopping, calibration)",
+  "test": "2021-2025 (scored only)"
+ },
+ "test_cell_weeks": 10926500,
+ "test_fire_rate": 0.067,
+ "model": {
+  "pr_auc": 0.5495,
+  "roc_auc": 0.9181,
+  "brier": 0.04219,
+  "precision_top10pct": 0.4247,
+  "share_of_fires_in_top10pct": 0.6336
+ },
+ "baseline_climatology": {
+  "pr_auc": 0.4406,
+  "roc_auc": 0.8591,
+  "brier": 0.04742,
+  "precision_top10pct": 0.3729,
+  "share_of_fires_in_top10pct": 0.5563
+ },
+ "lift_pr_auc": 1.25,
+ "by_year": {
+  "2021": {
+   "model_pr_auc": 0.5285,
+   "baseline_pr_auc": 0.4513
+  },
+  "2022": {
+   "model_pr_auc": 0.5431,
+   "baseline_pr_auc": 0.451
+  },
+  "2023": {
+   "model_pr_auc": 0.5706,
+   "baseline_pr_auc": 0.4464
+  },
+  "2024": {
+   "model_pr_auc": 0.5534,
+   "baseline_pr_auc": 0.4366
+  },
+  "2025": {
+   "model_pr_auc": 0.5493,
+   "baseline_pr_auc": 0.4217
+  }
+ },
+ "calibration": [
+  {
+   "bin": "0%-1%",
+   "predicted": 0.0022,
+   "observed": 0.003,
+   "cell_weeks": 5363789
+  },
+  {
+   "bin": "1%-2%",
+   "predicted": 0.014,
+   "observed": 0.0147,
+   "cell_weeks": 1329190
+  },
+  {
+   "bin": "2%-5%",
+   "predicted": 0.0327,
+   "observed": 0.0337,
+   "cell_weeks": 1321743
+  },
+  {
+   "bin": "5%-10%",
+   "predicted": 0.0715,
+   "observed": 0.073,
+   "cell_weeks": 1031385
+  },
+  {
+   "bin": "10%-20%",
+   "predicted": 0.145,
+   "observed": 0.1487,
+   "cell_weeks": 861539
+  },
+  {
+   "bin": "20%-30%",
+   "predicted": 0.2494,
+   "observed": 0.2575,
+   "cell_weeks": 382802
+  },
+  {
+   "bin": "30%-50%",
+   "predicted": 0.3845,
+   "observed": 0.3944,
+   "cell_weeks": 336357
+  },
+  {
+   "bin": "50%-70%",
+   "predicted": 0.5861,
+   "observed": 0.5931,
+   "cell_weeks": 145838
+  },
+  {
+   "bin": "70%-90%",
+   "predicted": 0.801,
+   "observed": 0.7883,
+   "cell_weeks": 91638
+  },
+  {
+   "bin": "90%-100%",
+   "predicted": 0.9602,
+   "observed": 0.9478,
+   "cell_weeks": 62219
+  }
+ ],
+ "importance_pct": {
+  "Fire history (harmonized record)": 58.0,
+  "Recent fire in or near the cell": 24.1,
+  "Season and location": 7.9,
+  "Temperature": 4.9,
+  "Rain": 2.7,
+  "Humidity": 2.0,
+  "Wind": 0.3
+ },
+ "trees": 278,
+ "features": [
+  "clim_month",
+  "prev_year_month",
+  "hist_last_month",
+  "hist_last_3_months",
+  "anomaly_last_month",
+  "fire_last_week",
+  "fire_2_weeks_ago",
+  "fire_last_4_weeks",
+  "neighbours_last_week",
+  "neighbours_last_4_weeks",
+  "tmax_last_week",
+  "rh_last_week",
+  "wind_last_week",
+  "rain_last_week",
+  "rain_last_4_weeks",
+  "rain_last_12_weeks",
+  "tmax_anomaly",
+  "rh_anomaly",
+  "season_sin",
+  "season_cos",
+  "lat",
+  "lon"
+ ],
+ "limits": [
+  "No land-cover or vegetation-greenness feature.",
+  "Weather on a 1 degree grid.",
+  "Predicts whether a cell burns, not where a fire starts or how far it spreads.",
+  "Past fire is the strongest signal, so new fire in a never-burned place is poorly anticipated."
+ ]
+}

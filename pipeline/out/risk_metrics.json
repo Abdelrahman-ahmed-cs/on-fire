@@ -1,0 +1,555 @@
+{
+ "question": "Will this 0.25 degree cell have at least one non-flare VIIRS fire detection in the week, predicted from fire data available before the week starts and the weather forecast for the week?",
+ "forecast_assumption": "perfect",
+ "forecast_label": "assumes a perfect 7-day weather forecast",
+ "chosen": "version 3 (adds forecast weather for the week)",
+ "chosen_uses_forecast_weather": true,
+ "no_forecast_version": "version 2 (adds dryness, drought, time since fire, wider area)",
+ "versions": {
+  "version 1 (history, recent fire, basic weather)": {
+   "uses_forecast_weather": false,
+   "tune_pr_auc": 0.5648,
+   "test": {
+    "pr_auc": 0.5495,
+    "roc_auc": 0.9181,
+    "brier": 0.04219,
+    "precision_top10pct": 0.4247,
+    "share_of_fires_in_top10pct": 0.6336
+   },
+   "features": [
+    "clim_month",
+    "prev_year_month",
+    "hist_last_month",
+    "hist_last_3_months",
+    "anomaly_last_month",
+    "fire_last_week",
+    "fire_2_weeks_ago",
+    "fire_last_4_weeks",
+    "neighbours_last_week",
+    "neighbours_last_4_weeks",
+    "tmax_last_week",
+    "rh_last_week",
+    "wind_last_week",
+    "rain_last_week",
+    "rain_last_4_weeks",
+    "rain_last_12_weeks",
+    "tmax_anomaly",
+    "rh_anomaly",
+    "season_sin",
+    "season_cos",
+    "lat",
+    "lon"
+   ]
+  },
+  "version 2 (adds dryness, drought, time since fire, wider area)": {
+   "uses_forecast_weather": false,
+   "tune_pr_auc": 0.5657,
+   "test": {
+    "pr_auc": 0.55,
+    "roc_auc": 0.9192,
+    "brier": 0.04217,
+    "precision_top10pct": 0.4253,
+    "share_of_fires_in_top10pct": 0.6345
+   },
+   "features": [
+    "clim_month",
+    "prev_year_month",
+    "hist_last_month",
+    "hist_last_3_months",
+    "anomaly_last_month",
+    "fire_last_week",
+    "fire_2_weeks_ago",
+    "fire_last_4_weeks",
+    "neighbours_last_week",
+    "neighbours_last_4_weeks",
+    "tmax_last_week",
+    "rh_last_week",
+    "wind_last_week",
+    "rain_last_week",
+    "rain_last_4_weeks",
+    "rain_last_12_weeks",
+    "tmax_anomaly",
+    "rh_anomaly",
+    "season_sin",
+    "season_cos",
+    "lat",
+    "lon",
+    "vpd_last_week",
+    "vpd_last_4_weeks",
+    "vpd_anomaly",
+    "tmax_4_week_anomaly",
+    "rain_last_26_weeks",
+    "rain_last_52_weeks",
+    "rain_26_week_anomaly",
+    "hot_dry_windy",
+    "months_since_fire",
+    "yearly_activity_before",
+    "wider_area_fire_last_week"
+   ]
+  },
+  "version 3 (adds forecast weather for the week)": {
+   "uses_forecast_weather": true,
+   "tune_pr_auc": 0.5865,
+   "test": {
+    "pr_auc": 0.5692,
+    "roc_auc": 0.9235,
+    "brier": 0.04112,
+    "precision_top10pct": 0.4353,
+    "share_of_fires_in_top10pct": 0.6495
+   },
+   "features": [
+    "clim_month",
+    "prev_year_month",
+    "hist_last_month",
+    "hist_last_3_months",
+    "anomaly_last_month",
+    "fire_last_week",
+    "fire_2_weeks_ago",
+    "fire_last_4_weeks",
+    "neighbours_last_week",
+    "neighbours_last_4_weeks",
+    "tmax_last_week",
+    "rh_last_week",
+    "wind_last_week",
+    "rain_last_week",
+    "rain_last_4_weeks",
+    "rain_last_12_weeks",
+    "tmax_anomaly",
+    "rh_anomaly",
+    "season_sin",
+    "season_cos",
+    "lat",
+    "lon",
+    "vpd_last_week",
+    "vpd_last_4_weeks",
+    "vpd_anomaly",
+    "tmax_4_week_anomaly",
+    "rain_last_26_weeks",
+    "rain_last_52_weeks",
+    "rain_26_week_anomaly",
+    "hot_dry_windy",
+    "months_since_fire",
+    "yearly_activity_before",
+    "wider_area_fire_last_week",
+    "fc_tmax",
+    "fc_rh",
+    "fc_wind",
+    "fc_rain",
+    "fc_vpd",
+    "fc_hot_dry_windy",
+    "fc_tmax_anomaly",
+    "fc_rh_anomaly",
+    "fc_wind_anomaly",
+    "fc_rain_anomaly",
+    "fc_vpd_anomaly",
+    "fc_hot_dry_windy_anomaly",
+    "fc_hottest_day",
+    "fc_windiest_day",
+    "fc_hottest_day_anomaly",
+    "fc_windiest_day_anomaly"
+   ]
+  }
+ },
+ "split": {
+  "train": "2012-03 to 2018",
+  "tune": "2019-2020 (early stopping, calibration)",
+  "test": "2021-2025 (scored only)"
+ },
+ "test_cell_weeks": 10926500,
+ "test_fire_rate": 0.067,
+ "model": {
+  "pr_auc": 0.5692,
+  "roc_auc": 0.9235,
+  "brier": 0.04112,
+  "precision_top10pct": 0.4353,
+  "share_of_fires_in_top10pct": 0.6495
+ },
+ "baseline_climatology": {
+  "pr_auc": 0.4406,
+  "roc_auc": 0.8591,
+  "brier": 0.04742,
+  "precision_top10pct": 0.3729,
+  "share_of_fires_in_top10pct": 0.5563
+ },
+ "lift_pr_auc": 1.29,
+ "by_year": {
+  "2021": {
+   "model_pr_auc": 0.552,
+   "no_forecast_pr_auc": 0.5297,
+   "baseline_pr_auc": 0.4513
+  },
+  "2022": {
+   "model_pr_auc": 0.5621,
+   "no_forecast_pr_auc": 0.5432,
+   "baseline_pr_auc": 0.451
+  },
+  "2023": {
+   "model_pr_auc": 0.5867,
+   "no_forecast_pr_auc": 0.5704,
+   "baseline_pr_auc": 0.4464
+  },
+  "2024": {
+   "model_pr_auc": 0.5723,
+   "no_forecast_pr_auc": 0.5545,
+   "baseline_pr_auc": 0.4366
+  },
+  "2025": {
+   "model_pr_auc": 0.5704,
+   "no_forecast_pr_auc": 0.5495,
+   "baseline_pr_auc": 0.4217
+  }
+ },
+ "calibration": [
+  {
+   "bin": "0%-1%",
+   "predicted": 0.0023,
+   "observed": 0.0028,
+   "cell_weeks": 5637640
+  },
+  {
+   "bin": "1%-2%",
+   "predicted": 0.0145,
+   "observed": 0.0146,
+   "cell_weeks": 995574
+  },
+  {
+   "bin": "2%-5%",
+   "predicted": 0.032,
+   "observed": 0.0318,
+   "cell_weeks": 1396170
+  },
+  {
+   "bin": "5%-10%",
+   "predicted": 0.072,
+   "observed": 0.0697,
+   "cell_weeks": 999896
+  },
+  {
+   "bin": "10%-20%",
+   "predicted": 0.1423,
+   "observed": 0.1397,
+   "cell_weeks": 804092
+  },
+  {
+   "bin": "20%-30%",
+   "predicted": 0.2428,
+   "observed": 0.2413,
+   "cell_weeks": 390090
+  },
+  {
+   "bin": "30%-50%",
+   "predicted": 0.3795,
+   "observed": 0.3781,
+   "cell_weeks": 362994
+  },
+  {
+   "bin": "50%-70%",
+   "predicted": 0.573,
+   "observed": 0.5725,
+   "cell_weeks": 155707
+  },
+  {
+   "bin": "70%-90%",
+   "predicted": 0.7896,
+   "observed": 0.7775,
+   "cell_weeks": 114782
+  },
+  {
+   "bin": "90%-100%",
+   "predicted": 0.961,
+   "observed": 0.9492,
+   "cell_weeks": 69555
+  }
+ ],
+ "importance_pct": {
+  "Fire history (harmonized record)": 52.0,
+  "Recent fire in or near the cell": 21.8,
+  "Forecast weather for the week": 14.0,
+  "Season and location": 5.5,
+  "Rain and drought": 2.8,
+  "Air dryness": 2.5,
+  "Temperature": 1.0,
+  "Wind": 0.5
+ },
+ "trees": 526,
+ "large_fires": {
+  "definition": "Every fire event in 2021-2025 rated critical (top 1% by size for its country). For the week it began, a fire is 'inside the top 10%' when at least half of the cells it burned that week were among the highest-risk 10% of cells in its country. Rank = average risk percentile of those cells.",
+  "all": {
+   "fires": 8728,
+   "model_pct_inside_top10": 59.2,
+   "baseline_pct_inside_top10": 47.8,
+   "model_median_rank_pct": 91.7,
+   "baseline_median_rank_pct": 86.6,
+   "model_pct_above_typical_cell": 93.1
+  },
+  "by_region": {
+   "Middle East": {
+    "fires": 1176,
+    "model_pct_inside_top10": 79.1,
+    "baseline_pct_inside_top10": 67.4,
+    "model_median_rank_pct": 96.4,
+    "baseline_median_rank_pct": 93.9,
+    "model_pct_above_typical_cell": 96.5
+   },
+   "North Africa": {
+    "fires": 1177,
+    "model_pct_inside_top10": 61.2,
+    "baseline_pct_inside_top10": 50.6,
+    "model_median_rank_pct": 91.3,
+    "baseline_median_rank_pct": 88.6,
+    "model_pct_above_typical_cell": 96.4
+   },
+   "North America": {
+    "fires": 6375,
+    "model_pct_inside_top10": 55.2,
+    "baseline_pct_inside_top10": 43.7,
+    "model_median_rank_pct": 90.1,
+    "baseline_median_rank_pct": 84.6,
+    "model_pct_above_typical_cell": 91.8
+   }
+  },
+  "by_year": {
+   "2021": {
+    "fires": 1604,
+    "model_pct_inside_top10": 56.5,
+    "baseline_pct_inside_top10": 48.4,
+    "model_median_rank_pct": 91.2,
+    "baseline_median_rank_pct": 86.7,
+    "model_pct_above_typical_cell": 92.9
+   },
+   "2022": {
+    "fires": 1461,
+    "model_pct_inside_top10": 58.0,
+    "baseline_pct_inside_top10": 49.6,
+    "model_median_rank_pct": 91.8,
+    "baseline_median_rank_pct": 88.2,
+    "model_pct_above_typical_cell": 90.6
+   },
+   "2023": {
+    "fires": 1860,
+    "model_pct_inside_top10": 60.9,
+    "baseline_pct_inside_top10": 49.1,
+    "model_median_rank_pct": 92.5,
+    "baseline_median_rank_pct": 86.8,
+    "model_pct_above_typical_cell": 94.5
+   },
+   "2024": {
+    "fires": 1993,
+    "model_pct_inside_top10": 60.5,
+    "baseline_pct_inside_top10": 46.0,
+    "model_median_rank_pct": 91.9,
+    "baseline_median_rank_pct": 85.5,
+    "model_pct_above_typical_cell": 94.5
+   },
+   "2025": {
+    "fires": 1810,
+    "model_pct_inside_top10": 59.4,
+    "baseline_pct_inside_top10": 46.7,
+    "model_median_rank_pct": 91.3,
+    "baseline_median_rank_pct": 86.0,
+    "model_pct_above_typical_cell": 92.2
+   }
+  },
+  "by_version": {
+   "version 1 (history, recent fire, basic weather)": {
+    "all": {
+     "fires": 8728,
+     "model_pct_inside_top10": 58.9,
+     "baseline_pct_inside_top10": 47.8,
+     "model_median_rank_pct": 91.4,
+     "baseline_median_rank_pct": 86.6,
+     "model_pct_above_typical_cell": 91.2
+    },
+    "by_region": {
+     "Middle East": {
+      "fires": 1176,
+      "model_pct_inside_top10": 78.2,
+      "baseline_pct_inside_top10": 67.4,
+      "model_median_rank_pct": 96.3,
+      "baseline_median_rank_pct": 93.9,
+      "model_pct_above_typical_cell": 96.5
+     },
+     "North Africa": {
+      "fires": 1177,
+      "model_pct_inside_top10": 62.6,
+      "baseline_pct_inside_top10": 50.6,
+      "model_median_rank_pct": 91.5,
+      "baseline_median_rank_pct": 88.6,
+      "model_pct_above_typical_cell": 96.5
+     },
+     "North America": {
+      "fires": 6375,
+      "model_pct_inside_top10": 54.6,
+      "baseline_pct_inside_top10": 43.7,
+      "model_median_rank_pct": 89.7,
+      "baseline_median_rank_pct": 84.6,
+      "model_pct_above_typical_cell": 89.2
+     }
+    }
+   },
+   "version 2 (adds dryness, drought, time since fire, wider area)": {
+    "all": {
+     "fires": 8728,
+     "model_pct_inside_top10": 58.4,
+     "baseline_pct_inside_top10": 47.8,
+     "model_median_rank_pct": 91.3,
+     "baseline_median_rank_pct": 86.6,
+     "model_pct_above_typical_cell": 91.4
+    },
+    "by_region": {
+     "Middle East": {
+      "fires": 1176,
+      "model_pct_inside_top10": 78.1,
+      "baseline_pct_inside_top10": 67.4,
+      "model_median_rank_pct": 96.4,
+      "baseline_median_rank_pct": 93.9,
+      "model_pct_above_typical_cell": 96.7
+     },
+     "North Africa": {
+      "fires": 1177,
+      "model_pct_inside_top10": 62.0,
+      "baseline_pct_inside_top10": 50.6,
+      "model_median_rank_pct": 91.4,
+      "baseline_median_rank_pct": 88.6,
+      "model_pct_above_typical_cell": 96.3
+     },
+     "North America": {
+      "fires": 6375,
+      "model_pct_inside_top10": 54.1,
+      "baseline_pct_inside_top10": 43.7,
+      "model_median_rank_pct": 89.5,
+      "baseline_median_rank_pct": 84.6,
+      "model_pct_above_typical_cell": 89.5
+     }
+    }
+   },
+   "version 3 (adds forecast weather for the week)": {
+    "all": {
+     "fires": 8728,
+     "model_pct_inside_top10": 59.2,
+     "baseline_pct_inside_top10": 47.8,
+     "model_median_rank_pct": 91.7,
+     "baseline_median_rank_pct": 86.6,
+     "model_pct_above_typical_cell": 93.1
+    },
+    "by_region": {
+     "Middle East": {
+      "fires": 1176,
+      "model_pct_inside_top10": 79.1,
+      "baseline_pct_inside_top10": 67.4,
+      "model_median_rank_pct": 96.4,
+      "baseline_median_rank_pct": 93.9,
+      "model_pct_above_typical_cell": 96.5
+     },
+     "North Africa": {
+      "fires": 1177,
+      "model_pct_inside_top10": 61.2,
+      "baseline_pct_inside_top10": 50.6,
+      "model_median_rank_pct": 91.3,
+      "baseline_median_rank_pct": 88.6,
+      "model_pct_above_typical_cell": 96.4
+     },
+     "North America": {
+      "fires": 6375,
+      "model_pct_inside_top10": 55.2,
+      "baseline_pct_inside_top10": 43.7,
+      "model_median_rank_pct": 90.1,
+      "baseline_median_rank_pct": 84.6,
+      "model_pct_above_typical_cell": 91.8
+     }
+    }
+   }
+  }
+ },
+ "features": [
+  "clim_month",
+  "prev_year_month",
+  "hist_last_month",
+  "hist_last_3_months",
+  "anomaly_last_month",
+  "fire_last_week",
+  "fire_2_weeks_ago",
+  "fire_last_4_weeks",
+  "neighbours_last_week",
+  "neighbours_last_4_weeks",
+  "tmax_last_week",
+  "rh_last_week",
+  "wind_last_week",
+  "rain_last_week",
+  "rain_last_4_weeks",
+  "rain_last_12_weeks",
+  "tmax_anomaly",
+  "rh_anomaly",
+  "season_sin",
+  "season_cos",
+  "lat",
+  "lon",
+  "vpd_last_week",
+  "vpd_last_4_weeks",
+  "vpd_anomaly",
+  "tmax_4_week_anomaly",
+  "rain_last_26_weeks",
+  "rain_last_52_weeks",
+  "rain_26_week_anomaly",
+  "hot_dry_windy",
+  "months_since_fire",
+  "yearly_activity_before",
+  "wider_area_fire_last_week",
+  "fc_tmax",
+  "fc_rh",
+  "fc_wind",
+  "fc_rain",
+  "fc_vpd",
+  "fc_hot_dry_windy",
+  "fc_tmax_anomaly",
+  "fc_rh_anomaly",
+  "fc_wind_anomaly",
+  "fc_rain_anomaly",
+  "fc_vpd_anomaly",
+  "fc_hot_dry_windy_anomaly",
+  "fc_hottest_day",
+  "fc_windiest_day",
+  "fc_hottest_day_anomaly",
+  "fc_windiest_day_anomaly"
+ ],
+ "model_selection": {
+  "rule": "Three versions were trained on the same rows. The one with the highest score on 2019-2020 was chosen; 2021-2025 and the showcase fires played no part.",
+  "tune_years_pr_auc": {
+   "version 1 (history, recent fire, basic weather)": 0.5648,
+   "version 2 (adds dryness, drought, time since fire, wider area)": 0.5657,
+   "version 3 (adds forecast weather for the week)": 0.5865
+  },
+  "chosen": "version 3 (adds forecast weather for the week)",
+  "test_scores": {
+   "version 1 (history, recent fire, basic weather)": {
+    "pr_auc": 0.5495,
+    "roc_auc": 0.9181,
+    "brier": 0.04219,
+    "precision_top10pct": 0.4247,
+    "share_of_fires_in_top10pct": 0.6336
+   },
+   "version 2 (adds dryness, drought, time since fire, wider area)": {
+    "pr_auc": 0.55,
+    "roc_auc": 0.9192,
+    "brier": 0.04217,
+    "precision_top10pct": 0.4253,
+    "share_of_fires_in_top10pct": 0.6345
+   },
+   "version 3 (adds forecast weather for the week)": {
+    "pr_auc": 0.5692,
+    "roc_auc": 0.9235,
+    "brier": 0.04112,
+    "precision_top10pct": 0.4353,
+    "share_of_fires_in_top10pct": 0.6495
+   }
+  },
+  "disclosure": "Version 1 was scored on the test years once before version 2 was built, and version 2 before version 3. Each new version's inputs were fixed before it was scored (version 3's from PLAN.md section 13, written before any version-3 run). Version 3 uses the weather of the predicted week; in these backtests that is the real weather, so each of its numbers assumes a perfect 7-day weather forecast and is an upper bound."
+ },
+ "limits": [
+  "Version 3 uses the real weather of the predicted week in place of a forecast, so its scores assumes a perfect 7-day weather forecast. A real forecast is less accurate, so live results would be lower.",
+  "No land-cover or vegetation-greenness feature.",
+  "Weather on a 1 degree grid.",
+  "Predicts whether a cell burns, not where a fire starts or how far it spreads.",
+  "Past fire is the strongest signal, so new fire in a never-burned place is poorly anticipated."
+ ]
+}

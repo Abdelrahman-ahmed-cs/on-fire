@@ -1,0 +1,80 @@
+/* THEME — every colour, font and radius used by the app is a variable here.
+   Direction (user, 2026-11-13 late): look identical to the team's web app screens.
+   Pure black ground, neutral graphite glass tiles, white active pills, ember
+   accents, hero cards that fade from graphite into ember (or into deep red for
+   warnings), warm heat ramps for the data. Written fresh for On Fire. */
+:root {
+  /* ground and glass */
+  --bg: #000;
+  --panel: #0e0e0f;
+  --tile: #161618;
+  --tile-2: #1e1e21;
+  --tile-3: #26262a;
+  --glass: rgba(14, 14, 15, 0.82);         /* floating controls over the map */
+  --glass-strong: rgba(22, 22, 24, 0.96);
+  --blur: 16px;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.14);
+  --ember-glow: rgba(255, 106, 31, 0.13);   /* faint orange at the very top, black below */
+
+  /* text */
+  --text: #ffffff;
+  --text-dim: #c3c3c9;               /* brighter for projectors */
+  --text-faint: #93939b;
+  --ink: #0b0b0c;                           /* text on white pills */
+
+  /* interface accents */
+  --ember: #ff6a1f;
+  --ember-2: #ff9a4d;
+  --ember-deep: #c2410c;
+  --alert: #ff3b30;
+  --amber: #ffb340;
+  --lime: #3ddc5b;
+  --hero: linear-gradient(180deg, #161618 0%, #161618 36%, #5a210a 74%, #e8561a 100%);
+  --hero-warn: linear-gradient(180deg, #1a1414 0%, #2a1210 45%, #5c1410 100%);
+  --hero-cool: linear-gradient(180deg, #161618 0%, #161618 40%, #10303a 78%, #1b7f95 100%);
+  --pop: 0 24px 60px -20px rgba(0, 0, 0, .85), 0 0 0 1px var(--line);
+  --bevel: inset 0 1px 0 rgba(255, 255, 255, .07), inset 0 -1px 0 rgba(0, 0, 0, .5);
+
+  /* fire severity on the map (warm, with size as a second cue) */
+  --sev-low: #ffe08a;
+  --sev-moderate: #ffb340;
+  --sev-high: #ff6a1f;
+  --sev-critical: #ff2d3a;
+  --flare: #37d5e6;
+
+  /* risk tiers */
+  --risk-mod: #ffd166;
+  --risk-high: #f8891e;
+  --risk-red: #ff3b30;
+
+  /* chart series */
+  --series-modis: #e6e6ea;
+  --series-viirs: #ff9a4d;
+  --series-harmonized: #ff6a1f;
+
+  --font: "Satoshi", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --display: "Satoshi", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --r-card: 28px;
+  --r-tile: 22px;
+  --r-sm: 12px;
+  --topbar: 64px;
+  --side-w: 452px;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --spring: cubic-bezier(.34, 1.56, .64, 1);
+}
+
+/* Colour-blind palette: severity and heat on a blue-to-yellow scale, flares in violet. */
+body.cvd {
+  --sev-low: #dfe6ee;
+  --sev-moderate: #8fb8ff;
+  --sev-high: #ffd23f;
+  --sev-critical: #fffbe0;
+  --flare: #b58cff;
+  --risk-mod: #8fb8ff;
+  --risk-high: #ffd23f;
+  --risk-red: #fffbe0;
+  --series-harmonized: #ffd23f;
+  --series-viirs: #8fb8ff;
+}

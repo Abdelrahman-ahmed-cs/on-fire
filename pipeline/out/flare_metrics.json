@@ -1,0 +1,110 @@
+{
+  "rule": "active in >= 30% of months, in >= 3 different years, night share >= 0%",
+  "thresholds": {
+    "persistence": 0.3,
+    "min_years": 3,
+    "min_night_frac": 0.0,
+    "cell_deg": 0.02
+  },
+  "tuned_on": "random half of cells",
+  "scored_on": "the other half",
+  "detection_weighted": {
+    "precision": 0.962,
+    "recall": 0.97,
+    "f1": 0.966
+  },
+  "cell_level": {
+    "precision": 0.808,
+    "recall": 0.267
+  },
+  "test_cells": 782972,
+  "test_static_cells": 5619,
+  "by_country_test": {
+    "Algeria": {
+      "precision": 0.972,
+      "recall": 0.969,
+      "static_cells": 162
+    },
+    "Canada": {
+      "precision": 0.957,
+      "recall": 0.753,
+      "static_cells": 2905
+    },
+    "Egypt": {
+      "precision": 0.96,
+      "recall": 0.969,
+      "static_cells": 151
+    },
+    "Iran": {
+      "precision": 0.984,
+      "recall": 0.992,
+      "static_cells": 342
+    },
+    "Iraq": {
+      "precision": 0.991,
+      "recall": 0.996,
+      "static_cells": 195
+    },
+    "Kuwait": {
+      "precision": 0.892,
+      "recall": 0.966,
+      "static_cells": 35
+    },
+    "Libya": {
+      "precision": 0.988,
+      "recall": 0.984,
+      "static_cells": 87
+    },
+    "Mexico": {
+      "precision": 0.945,
+      "recall": 0.987,
+      "static_cells": 234
+    },
+    "Oman": {
+      "precision": 0.978,
+      "recall": 0.986,
+      "static_cells": 72
+    },
+    "Saudi Arabia": {
+      "precision": 0.945,
+      "recall": 0.986,
+      "static_cells": 117
+    },
+    "Sudan": {
+      "precision": 0.94,
+      "recall": 0.992,
+      "static_cells": 37
+    },
+    "Syria": {
+      "precision": 0.972,
+      "recall": 0.98,
+      "static_cells": 44
+    },
+    "Tunisia": {
+      "precision": 0.908,
+      "recall": 0.971,
+      "static_cells": 20
+    },
+    "Turkey": {
+      "precision": 0.972,
+      "recall": 0.98,
+      "static_cells": 150
+    },
+    "United Arab Emirates": {
+      "precision": 0.935,
+      "recall": 0.979,
+      "static_cells": 33
+    },
+    "United States": {
+      "precision": 0.882,
+      "recall": 0.907,
+      "static_cells": 956
+    },
+    "Yemen": {
+      "precision": 1.0,
+      "recall": 0.937,
+      "static_cells": 22
+    }
+  },
+  "caveat": "NASA's static-source flag is itself persistence-based, so agreement is expected. The detector's value is that it needs no flag and so works on live data."
+}

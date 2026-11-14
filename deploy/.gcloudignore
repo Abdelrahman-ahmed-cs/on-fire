@@ -1,0 +1,8 @@
+# Files Google Cloud Build does not upload (same rules as .dockerignore).
+**/node_modules
+**/dist
+**/__pycache__
+**/*.pyc
+**/*.log
+**/.env
+**/.env.*

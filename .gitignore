@@ -1,0 +1,25 @@
+# Raw data never goes in the repository (it lives in C:\Users\User\onfire-data)
+*.csv.part
+data/raw/
+node_modules/
+.next/
+.venv/
+__pycache__/
+*.pyc
+# .env is published on purpose: it holds only a free NASA FIRMS map key, so judges can run the app as downloaded (team decision, 2026-11-14)
+.env.local
+dist/
+*.log
+web/data/cache/area/
+
+# Kept on the team's PC, not published:
+# AI working notes (instructions, plan, build log) and third-party design-skill files
+CLAUDE.md
+PLAN.md
+PROGRESS.md
+.claude/
+# private project-page texts and submission checklist
+submission/
+# a fresh PC: data and Python made by setup.bat
+localdata/
+onfire-data.zip

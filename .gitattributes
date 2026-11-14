@@ -1,0 +1,5 @@
+# Windows scripts keep Windows line endings, also in a ZIP downloaded from GitHub
+*.bat text eol=crlf
+*.cmd text eol=crlf
+# shell scripts keep Unix line endings
+*.sh text eol=lf

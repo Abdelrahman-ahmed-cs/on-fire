@@ -1,0 +1,34 @@
+{
+  "name": "on-fire",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "On Fire: harmonized MODIS + VIIRS burning activity calendar and fire risk explorer for the Middle East, North Africa and North America",
+  "scripts": {
+    "setup:geo": "node server/scripts/build-geo.js",
+    "setup:archive": "node server/scripts/build-archive.js",
+    "server": "node --env-file=.env server/index.js",
+    "client": "vite",
+    "dev": "concurrently -k -n api,web -c red,cyan \"npm:server\" \"npm:client\"",
+    "build": "vite build",
+    "start": "node --env-file=.env server/index.js",
+    "train:risk": "node --max-old-space-size=6144 server/scripts/train-risk-model.js"
+  },
+  "dependencies": {
+    "@turf/bbox": "^7.4.0",
+    "@turf/boolean-point-in-polygon": "^7.4.0",
+    "cobe": "^2.0.1",
+    "compression": "^1.8.2",
+    "express": "^5.2.1",
+    "maplibre-gl": "^6.11.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "mapshaper": "^0.7.67",
+    "vite": "^8.3.1"
+  }
+}
